@@ -51,30 +51,46 @@
   };
 </script>
 
-  <meta name="description" content="张岩的个人blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="材质系统 Standard model 数学描述：BSDF (Bidirectional Scattering Distribution Function) = BRDF (Bidirectional Reflectance Distribution Function) + BTDF (Bidirectional Transmittance Function) 着重在BRDF，忽视BTDF，正确的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="filament pbr">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;31&#x2F;filament%20pbr&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="张岩的个人blog">
+<meta property="og:description" content="材质系统 Standard model 数学描述：BSDF (Bidirectional Scattering Distribution Function) = BRDF (Bidirectional Reflectance Distribution Function) + BTDF (Bidirectional Transmittance Function) 着重在BRDF，忽视BTDF，正确的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_fr_fd.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_microfacet.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_macrosurface.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_shadowing_masking.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_roughness.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_micro_vs_macro.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_scattering.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_brdf_dielectric_conductor.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_lambert_vs_disney.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_single_vs_multi_scatter.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;material_metallic_energy_loss.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;material_metallic_energy_preservation.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;material_furnace_energy_loss.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;material_furnace_energy_preservation.png">
+<meta property="og:updated_time" content="2019-11-25T15:27:25.975Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;google.github.io&#x2F;filament&#x2F;images&#x2F;diagram_fr_fd.png">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/10/31/filament%20pbr/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Hexo</title>
+  <title>filament pbr | Hexo</title>
   
 
 
@@ -169,10 +185,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/31/filament%20pbr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,8 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/31/filament%20pbr/" class="post-title-link" itemprop="url">filament pbr</a>
+          filament pbr
         </h1>
 
         <div class="post-meta">
@@ -218,7 +233,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>材质系统</p>
+        <p>材质系统</p>
 <p>Standard model</p>
 <p>数学描述：BSDF (Bidirectional Scattering Distribution Function) = BRDF (Bidirectional Reflectance Distribution Function) + BTDF (Bidirectional Transmittance Function)</p>
 <p>着重在BRDF，忽视BTDF，正确的渲染反射、各向同性、导电体表面。BRDF包含两项：diffuse项和specular项。不考虑次表面散射的示意图：</p>
@@ -356,24 +371,24 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vec3 energyCompensation = 1.0 + f0 * (1.0 / dfg.y - 1.0);</span><br><span class="line">// Scale the specular lobe to account for multiscattering</span><br><span class="line">Fr *= pixel.energyCompensation;</span><br></pre></td></tr></table></figure>
 <p>后续章节介绍DFG lookup table的计算与驱动。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
